@@ -54,8 +54,8 @@ const isValidLinkedInUrl = (url: string) => {
 };
 
 const formSchema = z.object({
-	companyName: z.string().trim().min(2, {
-		message: "Company Name must be at least 2 characters."
+	companyName: z.string().trim().min(1, {
+		message: "Company Name must be empty."
 	}),
 	companyWebsite: z.string().url({
 		message: "Invalid URL. Please enter a valid URL."
@@ -68,23 +68,23 @@ const formSchema = z.object({
 		.refine(url => isValidLinkedInUrl(url), {
 			message: "Invalid LinkedIn URL"
 		}),
-	companyIndustry: z.string().trim().min(2, {
-		message: "Company Industry must be at least 2 characters."
+	companyIndustry: z.string().trim().min(1, {
+		message: "Company Industry must be empty."
 	}),
-	companyDescription: z.string().trim().min(2, {
-		message: "Company Description must be at least 2 characters."
+	companyDescription: z.string().trim().min(1, {
+		message: "Company Description must be empty."
 	}),
-	companyGoals: z.string().trim().min(2, {
-		message: "Company Goals must be at least 2 characters."
+	companyGoals: z.string().trim().min(1, {
+		message: "Company Goals must be empty."
 	}),
-	companyHeadquarters: z.string().trim().min(2, {
-		message: "Company Headquarters must be at least 2 characters."
+	companyHeadquarters: z.string().trim().min(1, {
+		message: "Company Headquarters must be empty."
 	}),
-	fundingRound: z.string().trim().min(2, {
+	fundingRound: z.string().trim().min(1, {
 		message: "Please select a funding round."
 	}),
-	faqsUrl: z.string().trim().min(2, {
-		message: "FAQs URL must be at least 2 characters."
+	faqsUrl: z.string().trim().min(1, {
+		message: "FAQs URL must be empty."
 	}),
 	emplyeeCount: z.string()
 });
