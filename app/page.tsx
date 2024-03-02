@@ -28,7 +28,7 @@ import {
 	SelectValue
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "@/components/ui/use-toast";
 
@@ -142,6 +142,11 @@ export default function Home() {
 		}
 	});
 
+	const imageUrl = useMemo(
+		() => (image ? URL.createObjectURL(image) : ""),
+		[image]
+	);
+
 	function handleSelectImage() {
 		if (imageInputRef.current) {
 			imageInputRef.current.click();
@@ -215,9 +220,7 @@ export default function Home() {
 											className='h-[108px] w-[108px]'
 											onClick={handleSelectImage}
 										>
-											<AvatarImage
-												src={image ? URL.createObjectURL(image) : ""}
-											/>
+											<AvatarImage src={imageUrl} />
 											<AvatarFallback>
 												<LucideImage className='h-10 w-10' />
 											</AvatarFallback>
