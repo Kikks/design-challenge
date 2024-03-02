@@ -136,7 +136,7 @@ export default function Home() {
 			companyDescription: "",
 			companyGoals: "",
 			companyHeadquarters: "",
-			fundingRound: "",
+			fundingRound: "Seed",
 			faqsUrl: "",
 			emplyeeCount: "1-10"
 		}
