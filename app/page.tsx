@@ -55,7 +55,7 @@ const isValidLinkedInUrl = (url: string) => {
 
 const formSchema = z.object({
 	companyName: z.string().trim().min(1, {
-		message: "Company Name must be empty."
+		message: "Company Name must not be empty."
 	}),
 	companyWebsite: z.string().url({
 		message: "Invalid URL. Please enter a valid URL."
@@ -69,22 +69,22 @@ const formSchema = z.object({
 			message: "Invalid LinkedIn URL"
 		}),
 	companyIndustry: z.string().trim().min(1, {
-		message: "Company Industry must be empty."
+		message: "Company Industry must not be empty."
 	}),
 	companyDescription: z.string().trim().min(1, {
-		message: "Company Description must be empty."
+		message: "Company Description must not be empty."
 	}),
 	companyGoals: z.string().trim().min(1, {
-		message: "Company Goals must be empty."
+		message: "Company Goals must not be empty."
 	}),
 	companyHeadquarters: z.string().trim().min(1, {
-		message: "Company Headquarters must be empty."
+		message: "Company Headquarters must not be empty."
 	}),
 	fundingRound: z.string().trim().min(1, {
-		message: "Please select a funding round."
+		message: "Please select a not funding round."
 	}),
 	faqsUrl: z.string().trim().min(1, {
-		message: "FAQs URL must be empty."
+		message: "FAQs URL must not be empty."
 	}),
 	emplyeeCount: z.string()
 });
